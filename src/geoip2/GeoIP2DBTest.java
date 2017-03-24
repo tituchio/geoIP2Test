@@ -16,11 +16,6 @@ import com.maxmind.geoip2.record.Location;
 import com.maxmind.geoip2.record.Postal;
 import com.maxmind.geoip2.record.Subdivision;
 
-/**
- * @Class GeoIP2DBTest.java
- * @author eWIDEPLUS
- * @since 2017-03-20
- */
 
 public class GeoIP2DBTest {
 
@@ -29,12 +24,11 @@ public class GeoIP2DBTest {
 		String inputIP = "data/ipList.csv";
 		String splitter = ",";
 		
-		
 		File file = new File(inputIP);
 	    List<String> lines = Files.readAllLines(file.toPath(), 
 	            StandardCharsets.UTF_8);
 	    
-	    //processing each line of input
+	  //processing each line of input
 	    for (String line : lines) {
 	    	String [] ip = line.split(splitter);
     		System.out.println("Ip Address: "+ip[0]);
@@ -79,7 +73,7 @@ public class GeoIP2DBTest {
 		Location location = response.getLocation();
 		System.out.println("latitude: "+location.getLatitude());  // 44.9733
 		System.out.println("longitude: "+location.getLongitude()); // -93.2323
-		System.out.println("accuracy: " +location.getAccuracyRadius() + "m"); // 50
+	
 	}
 
 }
