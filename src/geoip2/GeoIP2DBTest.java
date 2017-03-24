@@ -16,8 +16,13 @@ import com.maxmind.geoip2.record.Location;
 import com.maxmind.geoip2.record.Postal;
 import com.maxmind.geoip2.record.Subdivision;
 
+/**
+ * @Class GeoIP2DBTest.java
+ * @author eWIDEPLUS
+ * @since 2017-03-20
+ */
 
-public class GeoIpTest {
+public class GeoIP2DBTest {
 
 	public static void main(String[] args) throws IOException, GeoIp2Exception {
 		
@@ -31,14 +36,13 @@ public class GeoIpTest {
 	    
 	    //processing each line of input
 	    for (String line : lines) {
-	    	System.out.println("List of IP: "+line);
-	    	String [] ips = line.split(splitter);
-	    	for(int i=0 ; i<ips.length;i++){
-	    		System.out.println("Ip Address: "+ips[i]);
-	    		System.out.println("=======================");
-	    		getGeoInfo(ips[i]);
-	    		System.out.println("\n");
-	    	}
+	    	String [] ip = line.split(splitter);
+    		System.out.println("Ip Address: "+ip[0]);
+    		System.out.println("site: "+ip[1]);
+    		System.out.println("=======================");
+    		getGeoInfo(ip[0]);
+    		System.out.println("\n");
+	    	
 	    }
 		
 	}
@@ -75,7 +79,7 @@ public class GeoIpTest {
 		Location location = response.getLocation();
 		System.out.println("latitude: "+location.getLatitude());  // 44.9733
 		System.out.println("longitude: "+location.getLongitude()); // -93.2323
-	
+		System.out.println("accuracy: " +location.getAccuracyRadius() + "m"); // 50
 	}
 
 }
