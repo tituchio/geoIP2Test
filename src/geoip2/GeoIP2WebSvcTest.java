@@ -76,6 +76,7 @@ public class GeoIP2WebSvcTest {
 		    Location location = response.getLocation();
 		    System.out.println(location.getLatitude());        // 44.9733
 		    System.out.println(location.getLongitude());       // -93.2323
+		    System.out.println(location.getAccuracyRadius());  // 3
 		}
 	}
 

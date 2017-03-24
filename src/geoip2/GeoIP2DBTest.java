@@ -73,6 +73,7 @@ public class GeoIP2DBTest {
 		Location location = response.getLocation();
 		System.out.println("latitude: "+location.getLatitude());  // 44.9733
 		System.out.println("longitude: "+location.getLongitude()); // -93.2323
+		 System.out.println("accuracy radius: "+ location.getAccuracyRadius()+" km");  // 3
 	
 	}
 
